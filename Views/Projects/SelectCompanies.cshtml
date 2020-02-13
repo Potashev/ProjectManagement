@@ -1,0 +1,35 @@
+﻿@model ProjectManagement.Models.Company
+
+@{
+    ViewData["Title"] = "Create project";
+}
+
+<h1>Create project</h1>
+<h2>Select companies for project</h2>
+<form asp-action="SelectManager">
+    <div class="text-danger"></div>
+
+    <div class="form-group">
+        <label class="control-label">Customer</label>
+        <select name="CustomerId" class="form-control" asp-items="ViewBag.CustomerId"></select>
+    </div>
+    <div class="form-group">
+        <label class="control-label">Performer</label>
+        <select name="PerformerId" class="form-control" asp-items="ViewBag.PerformerId"></select>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Next" class="btn btn-primary" />
+    </div>
+</form>
+<h2>Add company</h2>
+<form asp-controller="Companies" asp-action="AddCompany">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="Name" class="control-label"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Add" class="btn btn-primary" />
+    </div>
+</form>

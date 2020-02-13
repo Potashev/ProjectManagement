@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Project Management</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+</head>
+<body>
+    <!--меню-->
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <div>
+                <ul class="nav navbar-nav">
+                    <li><a asp-controller="Employees" asp-action="Index" class="navbar-brand">Employees</a></li>
+                </ul>
+            </div>
+            <div>
+                <ul class="nav navbar-nav">
+                    <li><a asp-controller="Projects" asp-action="Index" class="navbar-brand">Projects</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container body-content">
+        @RenderBody()
+        <hr>
+        <footer>
+            <p>© 2020 - Learn ASP.net Core</p>
+        </footer>
+    </div>
+</body>
+</html>
