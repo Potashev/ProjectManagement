@@ -1,0 +1,13 @@
+﻿@model IEnumerable<ProjectManagement.Models.Employee>
+
+<h3>Members</h3>
+<ul>
+    @foreach (Employee member in Model) {
+    <li>
+        @member.Surname
+        <a href="/Projects/RemoveMember?projectId=@ViewBag.ProjectId&memberId=@member.Id">Remove</a>
+    </li>
+    }
+</ul>
+<a asp-action="SelectCandidate" asp-route-id=@ViewBag.ProjectId>Add</a>
+<a asp-action="SelectMember" asp-route-id=@ViewBag.ProjectId>Remove</a>

@@ -22,9 +22,9 @@ namespace ProjectManagement.Models
 
         [Range(1, 10)]
         public int Priority { get; set; }
-        public int ManagerId { get; set; }
-        public int CustomerId { get; set; }
-        public int PerformerId { get; set; }
+        public int? ManagerId { get; set; }
+        public int? CustomerId { get; set; }
+        public int? PerformerId { get; set; }
 
         public virtual Employee Manager { get; set; }
         public virtual Company Customer { get; set; }
